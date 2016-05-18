@@ -1,0 +1,17 @@
+/Users/versim/java/workspace/bas/src/main/java/com/verinder/services/rest/ExpenseServiceImpl.java
+/Users/versim/java/workspace/bas/src/main/java/com/verinder/dao/income/IncomeDAO.java
+/Users/versim/java/workspace/bas/src/main/java/com/verinder/dao/expense/ExpenseDAOImpl.java
+/Users/versim/java/workspace/bas/src/main/java/com/verinder/dao/expensecategory/ExpenseCategoryDAO.java
+/Users/versim/java/workspace/bas/src/main/java/com/verinder/services/rest/IncomeServiceImpl.java
+/Users/versim/java/workspace/bas/src/main/java/com/verinder/services/rest/IncomeService.java
+/Users/versim/java/workspace/bas/src/main/java/com/verinder/dao/expensecategory/ExpenseCategoryDAOImpl.java
+/Users/versim/java/workspace/bas/src/main/java/com/verinder/controller/ExpenseCategoryController.java
+/Users/versim/java/workspace/bas/src/main/java/com/verinder/dao/income/IncomeDAOImpl.java
+/Users/versim/java/workspace/bas/src/main/java/com/verinder/controller/ExpenseController.java
+/Users/versim/java/workspace/bas/src/main/java/com/verinder/domain/Expense.java
+/Users/versim/java/workspace/bas/src/main/java/com/verinder/controller/IncomeController.java
+/Users/versim/java/workspace/bas/src/main/java/com/verinder/domain/Income.java
+/Users/versim/java/workspace/bas/src/main/java/com/verinder/domain/ExpenseCategory.java
+/Users/versim/java/workspace/bas/src/main/java/com/verinder/controller/HomeController.java
+/Users/versim/java/workspace/bas/src/main/java/com/verinder/dao/expense/ExpenseDAO.java
+/Users/versim/java/workspace/bas/src/main/java/com/verinder/services/rest/ExpenseService.java

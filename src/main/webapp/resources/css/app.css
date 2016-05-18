@@ -1,0 +1,25 @@
+.appDate{
+
+    padding-left:15px !important;
+}
+
+.verticalGap {
+  margin: 45px 0;
+}
+
+.pageHeading {
+color: #337ab7;
+}
+
+.checkbox {
+ height: 34px;
+ width: 34px;    
+}
+
+.font-size-normal{
+    font-weight: normal !important;
+}
+
+.right-align-text{
+    text-align: left !important;   
+}

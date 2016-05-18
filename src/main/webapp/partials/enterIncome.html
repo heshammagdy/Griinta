@@ -1,0 +1,92 @@
+        <script type="text/javascript">
+            $(function () {
+                $('.date-picker').datepicker({
+                    format: 'dd/mm/yyyy'
+                }).on('changeDate', function(ev){
+                    $(this).datepicker('hide');
+                });
+                
+                
+            });
+        </script>
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h2 class="pageHeading">Enter Income</h2>
+          
+          <div class="verticalGap"/>
+          
+          <form class="form-horizontal" role="form">
+     
+               <div class="form-group">
+                <label for="paymentDate" class="col-lg-2 col-md-3 col-sm-3 col-xs-12 control-label">Payment Date</label>
+                  <div class="col-lg-3 col-md-4 col-sm-4 col-xs-9 input-group appDate">
+                        <input type="text" id="paymentDate" class="form-control date-picker" placeholder="Payment Date"/>
+                        <label for="paymentDate" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
+                  </div>
+                <div class="col-lg-7 col-md-6 col-sm-6 col-xs-4"></div>
+              </div>
+            
+            <div class="form-group">
+                <label for="invoiceDate" class="col-lg-2 col-md-3 col-sm-3 col-xs-12 control-label">Invoice Date</label>
+                  <div class="col-lg-3 col-md-4 col-sm-4 col-xs-9 input-group appDate">
+                        <input type="text" id="invoiceDate" class="form-control date-picker" placeholder="Invoice date"/>
+                        <label for="invoiceDate" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
+                  </div>
+                <div class="col-lg-7 col-md-6 col-sm-6 col-xs-4"></div>
+              </div>
+             
+              
+              <div class="form-group">
+                <label for="expenseCategory" class="col-lg-2 col-md-3 col-sm-3 col-xs-12 control-label">Client</label>
+                  <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                    <select class="form-control" id="expenseCategory">
+                      <option value="volvo">People Bank</option>  
+                    </select>
+                  </div>
+                  <div class="col-lg-3 col-md-2 col-sm-1 hidden-xs"></div>
+              </div>
+            
+                 
+          <div class="form-group">
+                <label for="amount" class="col-lg-2 col-md-3 col-sm-3 col-xs-12 control-label">Amount</label>
+                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <input type="text" id="amount" class="form-control" id="amount" placeholder="Amount"/>
+                  </div>
+                  <div class="col-lg-6 col-md-5 col-sm-5 hidden-xs"></div>
+              </div>
+
+             <div class="form-group">
+                 <label class="col-lg-2 col-md-3 col-sm-3 col-xs-12 control-label"></label>     
+                  <div class="col-lg-10 col-md-7 col-sm-7 col-xs-12">
+                    <label class="font-size-normal">
+                      <input type="checkbox" id="gstIncluded">&nbsp; GST Included?
+                    </label>
+                  </div>
+            </div>
+
+          <div class="form-group">
+                <label for="gst" class="col-lg-2 col-md-3 col-sm-3 col-xs-12 control-label">GST</label>
+                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <input type="text" class="form-control" id="gst" placeholder="GST"/>
+                  </div>
+                  <div class="col-lg-6 col-md-5 col-sm-5 hidden-xs"></div>
+          </div>
+
+                
+              <div class="form-group">
+                <label for="" class="col-lg-2 col-md-3 col-sm-3 col-xs-12 control-label"></label>
+                  <div class="col-lg-10 col-md-9 col-sm-9 col-xs-12">
+                        <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+                  </div>
+              </div> 
+              
+          </form>
+          
+          
+      </div>
+
+    
+          
+     
+   

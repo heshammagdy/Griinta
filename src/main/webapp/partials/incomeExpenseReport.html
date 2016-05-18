@@ -1,0 +1,184 @@
+     <script type="text/javascript">
+            
+            $(document).ready(function(){
+                $('.date-picker').datepicker({
+                        format: 'dd/mm/yyyy'
+                    }).on('changeDate', function(ev){
+                        $(this).datepicker('hide');
+                    });
+               
+                $("#searchResult").hide();
+            
+            $("#searchButton").click(function(e){
+                e.preventDefault();
+                $("#searchResult").show();
+            });    
+                
+             $("[data-toggle='tooltip']").tooltip();   
+                
+            });
+            
+
+        </script>
+            <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h2 class="pageHeading">Income/Expense Report</h2>
+        <div class="verticalGap"/>  
+        <form class="form-horizontal">
+     
+            <div class="form-group">
+                <label for="expenseStartDate" class="col-lg-2 col-md-3 col-sm-3 col-xs-12 control-label">Expense start date</label>
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-9 input-group appDate">
+                        <input type="text" id="expenseStartDate" class="form-control date-picker" placeholder="Expense start date"/>
+                        <label for="expenseStartDate" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
+                </div>
+            </div>
+
+             <div class="form-group">      
+                  <label for="expenseEndDate" class="col-lg-2 col-md-3 col-sm-3 col-xs-12 control-label">Expense End date</label>
+                  <div class="col-lg-3 col-md-4 col-sm-4 col-xs-9 input-group appDate">
+                        <input type="text" id="expenseEndDate" class="form-control date-picker" placeholder="Expense start date"/>
+                        <label for="expenseEndDate" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
+                  </div>
+            </div>
+                      
+            <div class="form-group">          
+                <label for="invoiceStartDate" class="col-lg-2 col-md-3 col-sm-3 col-xs-12 control-label">Invoice start date</label>
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-9 input-group appDate">
+                        <input type="text" id="invoiceStartDate" class="form-control date-picker" placeholder="Invoice start date"/>
+                        <label for="invoiceStartDate" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
+                </div>
+                <div class="col-lg-7 col-md-6 col-sm-6 col-xs-4"></div>
+            </div>          
+                      
+            <div class="form-group">          
+                <label for="invoiceEndDate" class="col-lg-2 col-md-3 col-sm-3 col-xs-12 control-label">Invoice end date</label>
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-9 input-group appDate">
+                        <input type="text" id="invoiceEndDate" class="form-control date-picker" placeholder="Invoice end date"/>
+                        <label for="invoiceEndDate" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
+                </div>
+                <div class="col-lg-7 col-md-6 col-sm-6 col-xs-4"></div>
+            </div>       
+           <div class="form-group">
+                <label for="" class="col-lg-2 col-md-3 col-sm-3 col-xs-12 control-label"></label>
+                <div class="col-lg-10 col-md-9 col-sm-9 col-xs-12">
+                        <button class="btn btn-lg btn-primary" id="searchButton">Search</button>
+                </div>
+           </div>         
+                   
+        </form>           
+     
+    <div id="searchResult">
+    <div class="verticalGap"/>   
+    <h3 class="pageHeading">Expenses</h3>
+    <div class="table-responsive" id="expenseSearchResult">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Invoice Date</th>
+                    <th>Paymeny Date</th>
+                    <th>Expense Category</th>
+                    <th>Expense</th>
+                    <th>Gross Amount</th>
+                    <th>GST</th>
+                    <th>Net Amount</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td width="20px"><a href="" data-toggle="tooltip" data-placement="top" data-original-title="Edit"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td width="20px"><a href="" data-toggle="tooltip" data-placement="top" data-original-title="Delete"><span class="glyphicon glyphicon-trash"></span></a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td width="20px"><a href="" data-toggle="tooltip" data-placement="top" data-original-title="Edit"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td width="20px"><a href="" data-toggle="tooltip" data-placement="top" data-original-title="Delete"><span class="glyphicon glyphicon-trash"></span></a></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td width="20px"><a href="" data-toggle="tooltip" data-placement="top" data-original-title="Edit"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td width="20px"><a href="" data-toggle="tooltip" data-placement="top" data-original-title="Delete"><span class="glyphicon glyphicon-trash"></span></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="verticalGap"/>   
+    <h3 class="pageHeading">Income</h3>
+    <div class="table-responsive" id="incomeSearchResult">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Client</th>
+                    <th>Invoice Date</th>
+                    <th>Paymeny Date</th>
+                    <th>Gross Amount</th>
+                    <th>Net Amount</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td width="20px"><a href="" data-toggle="tooltip" data-placement="top" data-original-title="Edit"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td width="20px"><a href="" data-toggle="tooltip" data-placement="top" data-original-title="Delete"><span class="glyphicon glyphicon-trash"></span></a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td width="20px"><a href="" data-toggle="tooltip" data-placement="top" data-original-title="Edit"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td width="20px"><a href="" data-toggle="tooltip" data-placement="top" data-original-title="Delete"><span class="glyphicon glyphicon-trash"></span></a></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td>Table cell</td>
+                    <td width="20px"><a href="" data-toggle="tooltip" data-placement="top" data-original-title="Edit"><span class="glyphicon glyphicon-edit"></span></a></td>
+                    <td width="20px"><a href="" data-toggle="tooltip" data-placement="top" data-original-title="Delete"><span class="glyphicon glyphicon-trash"></span></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    </div>     
+    </div>
+

@@ -1,0 +1,158 @@
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                
+                $('.date-picker').datepicker({
+                    format: 'dd/mm/yyyy'
+                }).on('changeDate', function(ev){
+                    $(this).datepicker('hide');
+                });
+                
+                $("#submit").click(function(e){
+                    e.preventDefault();
+                    $('#dataSavedModal').modal('show');
+                });
+
+                $("#amount").blur(function() {
+                   calculateGst();
+                });
+
+                <!--$('.container').on('click', '#isGstIncluded', function(){-->
+                    <!--calculateGst();-->
+                <!--});-->
+
+                function calculateGst() {
+
+                    var expenseAmount = parseInt($("#amount").val());
+                    var isGstIncluded = $("#isGstIncluded").val();
+                    if (expenseAmount != 'undefined') {
+                        if (isGstIncluded) {
+                            $("#gst").val(expenseAmount/1.1);
+
+                        } else {
+                            $("#gst").val(expenseAmount*1.1);
+                        }
+                    }
+                }
+
+            });
+
+
+
+        </script>
+  
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h2 class="pageHeading">Enter expense</h2>
+          
+          <div class="verticalGap"/>
+          
+          <form class="form-horizontal" role="form" ng-submit="addNewExpense()">
+     
+               <div class="form-group">
+                <label for="expenseDate" class="col-lg-2 col-md-3 col-sm-3 col-xs-12 control-label">Expense Date</label>
+                  <div class="col-lg-3 col-md-4 col-sm-4 col-xs-9 input-group appDate">
+                        <input type="text" ng-model = "expenseDate" id="expenseDate" class="form-control date-picker"
+                               placeholder="Expense Date" ng-model="newExpense.expenseDate"/>
+                        <label for="expenseDate" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
+                  </div>
+                <div class="col-lg-7 col-md-6 col-sm-6 col-xs-4"></div>
+              </div>
+            
+            <div class="form-group">
+                <label for="invoiceDate" class="col-lg-2 col-md-3 col-sm-3 col-xs-12 control-label">Invoice Date</label>
+                  <div class="col-lg-3 col-md-4 col-sm-4 col-xs-9 input-group appDate">
+                        <input type="text" ng-model = "invoiceDate" id="invoiceDate" class="form-control date-picker"
+                               placeholder="Invoice date" ng-model="newExpense.invoiceDate"/>
+                        <label for="invoiceDate" class="input-group-addon btn"><span class="glyphicon glyphicon-calendar"></span>
+                  </div>
+                <div class="col-lg-7 col-md-6 col-sm-6 col-xs-4"></div>
+              </div>
+             
+              
+              <div class="form-group">
+                <label for="expenseCategory" class="col-lg-2 col-md-3 col-sm-3 col-xs-12 control-label">Expense Category</label>
+                  <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                    <select class="form-control" id="expenseCategory" ng-model="newExpense.expenseCategory.id">
+                        <option value="">--- Select ---</option>
+                        <option ng-repeat="expenseCategory in expenseCategories" value ="{{expenseCategory.id}}">{{expenseCategory.name}}</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-3 col-md-2 col-sm-1 hidden-xs"></div>
+              </div>
+            
+                 
+           
+              <div class="form-group">
+                <label for="expense" class="col-lg-2 col-md-3 col-sm-3 col-xs-12 control-label">Expense</label>
+                  <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                        <input type="text" id="expense" class="form-control" id="expense" ng-model="newExpense.expense"
+                               placeholder="Expense"/>
+                  </div>
+                  <div class="col-lg-3 col-md-2 col-sm-1 hidden-xs"></div>
+              </div>
+         
+              <div class="form-group">
+                <label for="amount" class="col-lg-2 col-md-3 col-sm-3 col-xs-12 control-label">Amount</label>
+                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <input type="text" id="amount" class="form-control" id="amount" ng-model="newExpense.amount" placeholder="Amount"/>
+                  </div>
+                  <div class="col-lg-6 col-md-5 col-sm-5 hidden-xs"></div>
+              </div>
+
+             <div class="form-group">
+                 <label class="col-lg-2 col-md-3 col-sm-3 col-xs-12 control-label"></label>     
+                  <div class="col-lg-10 col-md-7 col-sm-7 col-xs-12">
+                    <label class="font-size-normal">
+                      <input type="checkbox" id="isGstIncluded" ng-model="newExpense.isGstIncluded">&nbsp; GST Included?
+                    </label>
+                  </div>
+            </div>
+
+          <div class="form-group">
+                <label for="gst" class="col-lg-2 col-md-3 col-sm-3 col-xs-12 control-label">GST</label>
+                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <input type="text" class="form-control" id="gst"  ng-model="newExpense.gst" disabled/>
+                  </div>
+                  <div class="col-lg-6 col-md-5 col-sm-5 hidden-xs"></div>
+          </div>
+
+                
+              <div class="form-group">
+                <label for="" class="col-lg-2 col-md-3 col-sm-3 col-xs-12 control-label"></label>
+                  <div class="col-lg-10 col-md-9 col-sm-9 col-xs-12">
+                        <button id = "submit" type="submit" class="btn btn-lg btn-primary">Submit</button>
+                  </div>
+              </div> 
+              
+          </form>
+          
+          
+      </div>
+
+    <div id="dataSavedModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Confirmation</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Do you want to save changes you made to document before closing?</p>
+                    <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+              
+     
+   
+    
+    </body>
+</html>
